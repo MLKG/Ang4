@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('my-dalin App', () => {
+describe('dalin App', () => {
   let page: AppPage;
 
   beforeEach(() => {
