@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user.component';
 import { MembersComponent } from './members.component';
 import { MemberService } from './member.service';
+import { SimpleComponent } from './simple/simple.component';
 
 export const ROUTES: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'user' },
@@ -16,7 +17,7 @@ export const ROUTES: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent, UserComponent, MembersComponent
+    AppComponent, UserComponent, MembersComponent, SimpleComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(ROUTES)
