@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user.component';
 import { MembersComponent } from './members.component';
 import { MemberService } from './member.service';
+import { MailService } from './mail.service';
 import { SimpleComponent } from './simple/simple.component';
 
 export const ROUTES: Routes = [
@@ -22,7 +23,7 @@ export const ROUTES: Routes = [
   imports: [
     BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(ROUTES)
   ],
-  providers: [MemberService],
+  providers: [MemberService, MailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
