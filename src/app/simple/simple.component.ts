@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
       simple works!
     </p>
     <div>
-        <input #myInput type="text" (keydown.enter)="onEnter($event, myInput.value)">
+        <input #myInput type="text" (keydown.enter)="onEnter($event, myInput.value)" style="border: 1px solid red;">
         <button (click)="onClick($event, myInput.value)">点击</button>
     </div>
   `,
