@@ -6,9 +6,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user.component';
 import { MembersComponent } from './members.component';
+import { SimpleComponent } from './simple/simple.component';
 import { MemberService } from './member.service';
 import { MailService } from './mail.service';
-import { SimpleComponent } from './simple/simple.component';
 
 export const ROUTES: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'user' },
@@ -23,7 +23,8 @@ export const ROUTES: Routes = [
   imports: [
     BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(ROUTES)
   ],
-  providers: [MemberService, MailService],
+  providers: [MemberService, MailService, { provide: 'apiUrl', useValue: 'https://jsonplaceholder.typicode.com/' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
