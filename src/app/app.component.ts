@@ -8,8 +8,12 @@ import { MailService } from './mail.service';
 })
 export class AppComponent {
   title = 'app';
+  onUpdate (id, text) {
+    this.mailService.update(id, text);
+  }
   constructor(
-    @Inject(MailService) private mailService,
+    // @Inject(MailService) private mailService,
+    private mailService: MailService,
     @Inject('apiUrl') private apiUrl
   ) {}
 }

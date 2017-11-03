@@ -23,7 +23,7 @@ export const ROUTES: Routes = [
   imports: [
     BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(ROUTES)
   ],
-  providers: [MemberService, MailService, { provide: 'apiUrl', useValue: 'https://jsonplaceholder.typicode.com/' }
+  providers: [MemberService, MailService, {provide: 'apiUrl', useValue: 'https://jsonplaceholder.typicode.com/'}
   ],
   bootstrap: [AppComponent]
 })
