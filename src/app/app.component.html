@@ -19,4 +19,21 @@
       {{index}} - {{message.text}} - {{first}} - {{last}} -{{even}} -{{odd}}
     </li>
   </ul>
+  <h2 [appGreet]="'Hello, Smile!'" author="Dalin" age="18">Hello,Dalin</h2>
+  <ng-template #stpl let-message="message">
+    <p>{{message}}</p>
+  </ng-template>
+  <ng-template #atpl let-msg="message">
+    <p>{{msg}}</p>
+  </ng-template>
+  <ng-template #otpl let-msg>
+    <p>{{msg}}</p>
+  </ng-template>
+  <div [ngTemplateOutlet]="atpl" [ngOutletContext]="context">
+  </div>
+  <div [ngTemplateOutlet]="stpl" [ngOutletContext]="context">
+  </div>
+  <div [ngTemplateOutlet]="otpl" [ngOutletContext]="context">
+  </div>
+  <div *appExeUnless="condition">HA,HA,HA</div>
 </div>

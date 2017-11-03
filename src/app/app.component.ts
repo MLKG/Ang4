@@ -8,6 +8,11 @@ import { MailService } from './mail.service';
 })
 export class AppComponent {
   title = 'app';
+  context = {
+    message: 'Hello, ngOutletContext!',
+    $implicit: 'Hello, Girls!'
+  };
+  condition: boolean;
   onUpdate (id, text) {
     this.mailService.update(id, text);
   }
@@ -15,5 +20,7 @@ export class AppComponent {
     // @Inject(MailService) private mailService,
     private mailService: MailService,
     @Inject('apiUrl') private apiUrl
-  ) {}
+  ) {
+    this.condition = true;
+  }
 }

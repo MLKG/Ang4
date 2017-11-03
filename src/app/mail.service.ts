@@ -5,8 +5,7 @@ export class MailService {
   message = '该消息来自MailService';
   messages: Array<{id: number, text: string}> = [
     {id: 0, text: 'Dalin'},
-    {id: 1, text: 'Shadows'},
-    {id: 2, text: 'Keriy'}
+    {id: 1, text: 'Shadows'}
   ];
   update(id, text) {
     this.messages = this.messages.map(msg => {
