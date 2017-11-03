@@ -17,6 +17,7 @@ import { MailService } from './mail.service';
 // directive
 import { GreetDirective} from './greet.directive';
 import { UnlessDirective} from './unless.directive';
+import { FormsComponent } from './forms/forms.component';
 
 export const ROUTES: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'user' },
@@ -26,7 +27,7 @@ export const ROUTES: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent, UserComponent, MembersComponent, SimpleComponent, GreetDirective, UnlessDirective
+    AppComponent, UserComponent, MembersComponent, SimpleComponent, GreetDirective, UnlessDirective, FormsComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(ROUTES)

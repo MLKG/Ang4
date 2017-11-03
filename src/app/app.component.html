@@ -11,7 +11,7 @@
     <a routerLink="/members">Angular成员</a>
   </nav>
   <!--<router-outlet></router-outlet>-->
-  <app-simple *ngFor="let message of mailService.messages; index as index" [message]="message.text" (update)="onUpdate(message.id, $event.text)"></app-simple>
+  <!--<app-simple *ngFor="let message of mailService.messages; index as index" [message]="message.text" (update)="onUpdate(message.id, $event.text)"></app-simple>-->
   <div>{{ mailService.message }}</div>
   <p>API_URL: {{ apiUrl }}</p>
   <ul>
@@ -36,4 +36,6 @@
   <div [ngTemplateOutlet]="otpl" [ngOutletContext]="context">
   </div>
   <div *appExeUnless="condition">HA,HA,HA</div>
+  <!--表单-->
+  <app-forms></app-forms>
 </div>
