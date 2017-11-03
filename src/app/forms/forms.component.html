@@ -2,14 +2,18 @@
        required
        minlength="3"
        maxlength="10"
+       email
        [(ngModel)]="username"
        #userName="ngModel">
 <hr>
 <div *ngIf="userName.errors?.required">请输入用户姓名</div>
 <div *ngIf="userName.errors?.minlength">
-    用户名的长度必须大于{{userName.errors?.minlength.requiredLength}}，当前的长度为{{userName.errors?.minlength.actualLength}}
+    用户名的长度必须不小于{{userName.errors?.minlength.requiredLength}}，当前的长度为{{userName.errors?.minlength.actualLength}}
 </div>
 <div *ngIf="userName.errors?.maxlength">
-    用户名的长度必须大于{{userName.errors?.maxlength.requiredLength}}，当前的长度为{{userName.errors?.maxlength.actualLength}}
+    用户名的长度必须不大于{{userName.errors?.maxlength.requiredLength}}，当前的长度为{{userName.errors?.maxlength.actualLength}}
+</div>
+<div *ngIf="userName.errors?.email">
+    输入正确的邮箱
 </div>
 {{userName.errors | json}}

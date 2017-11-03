@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class FormsComponent implements OnInit {
-  username = 'Dalin';
+  username = 'Da@qq.com';
   constructor() {
   }
 
