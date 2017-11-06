@@ -20,12 +20,15 @@ import { MailService } from './mail.service';
 import { GreetDirective} from './greet.directive';
 import { UnlessDirective} from './unless.directive';
 import { FormsComponent } from './forms/forms.component';
-import { ReactComponent } from './react/react.component';
 
 export const ROUTES: Routes = [
   { path: '', component: UserComponent },
-  { path: 'user', component: UserComponent },
-  { path: 'members', component: MembersComponent }
+  { path: 'user/:username', component: UserComponent },
+  { path: 'members', component: MembersComponent },
+  {
+    path: 'settings',
+    loadChildren: './settings/settings.module#SettingsModule'
+  }
 ];
 
 @NgModule({
@@ -36,8 +39,7 @@ export const ROUTES: Routes = [
     SimpleComponent,
     GreetDirective,
     UnlessDirective,
-    FormsComponent,
-    ReactComponent
+    FormsComponent
   ],
   imports: [
     BrowserModule,

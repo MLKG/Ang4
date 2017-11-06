@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute} from '@angular/router';
 
 interface Address {
   province: string;
@@ -10,12 +11,13 @@ interface Address {
   templateUrl: './user.component.html'
 })
 
-export class UserComponent {
+export class UserComponent implements OnInit {
   name: string;
+  username: string;
   address: Address;
   showSkills: boolean;
   skills: string[];
-  constructor() {
+  constructor(private route: ActivatedRoute) {
     this.name = 'Semlinker';
     this.address = {
       province: '福建',
@@ -38,6 +40,11 @@ export class UserComponent {
     if (this.skills.indexOf(skillStr) === -1) {
       this.skills.push(skillStr);
     }
+  }
+  ngOnInit() {
+    this.route.params.subscribe((params) => {
+      this.username = params.username;
+    });
   }
 }
 
