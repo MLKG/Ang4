@@ -11,5 +11,19 @@ import {Component, OnInit } from '@angular/core';
 })
 export class SettingsComponent implements OnInit {
   ngOnInit() {
+    type Message = string | string[];
+    const greet = (message: Message) => {
+      if (message instanceof Array) {
+        let messages = '';
+        message.forEach((msg) => {
+          messages += `${msg}`;
+        });
+        console.log(messages);
+      } else {
+        console.log('Received messages = ', message);
+      }
+    };
+    greet('semlinker');
+    greet(['Hello', 'Angular']);
   }
 }
