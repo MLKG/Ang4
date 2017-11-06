@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+// import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 // component
@@ -18,19 +20,32 @@ import { MailService } from './mail.service';
 import { GreetDirective} from './greet.directive';
 import { UnlessDirective} from './unless.directive';
 import { FormsComponent } from './forms/forms.component';
+import { ReactComponent } from './react/react.component';
 
 export const ROUTES: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'user' },
+  { path: '', component: UserComponent },
   { path: 'user', component: UserComponent },
   { path: 'members', component: MembersComponent }
 ];
 
 @NgModule({
   declarations: [
-    AppComponent, UserComponent, MembersComponent, SimpleComponent, GreetDirective, UnlessDirective, FormsComponent
+    AppComponent,
+    UserComponent,
+    MembersComponent,
+    SimpleComponent,
+    GreetDirective,
+    UnlessDirective,
+    FormsComponent,
+    ReactComponent
   ],
   imports: [
-    BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(ROUTES)
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpModule,
+    // CommonModule,
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [MemberService, MailService, {provide: 'apiUrl', useValue: 'https://jsonplaceholder.typicode.com/'}
   ],

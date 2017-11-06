@@ -9,12 +9,12 @@
            [(ngModel)]="username"
            #userName="ngModel">
     <br>
-    <!--<p>Name控件的valid状态：{{userName.valid}} &#45;&#45; 表示控件有效</p>
-    <p>Name控件的invalid状态：{{userName.invalid}} &#45;&#45; 表示控件无效</p>
-    <p>Name控件的pristine状态：{{userName.pristine}} &#45;&#45; 表示控件值未改变</p>
-    <p>Name控件的dirty状态：{{userName.dirty}} &#45;&#45; 表示控件值已改变</p>
-    <p>Name控件的touched状态：{{userName.touched}} &#45;&#45; 表示控件值已被访问过</p>
-    <p>Name控件的untouched状态：{{userName.untouched}} &#45;&#45; 表示控件值未被访问过</p>-->
+    <p>Name控件的valid状态：{{userName.valid}} -- 表示控件有效</p>
+    <p>Name控件的invalid状态：{{userName.invalid}} -- 表示控件无效</p>
+    <p>Name控件的pristine状态：{{userName.pristine}} -- 表示控件值未改变</p>
+    <p>Name控件的dirty状态：{{userName.dirty}} -- 表示控件值已改变</p>
+    <p>Name控件的touched状态：{{userName.touched}} -- 表示控件值已被访问过</p>
+    <p>Name控件的untouched状态：{{userName.untouched}} -- 表示控件值未被访问过</p>
     <div *ngIf="userName.errors?.required">请输入用户姓名</div>
     <div *ngIf="userName.errors?.minlength">
       用户名的长度必须不小于{{userName.errors?.minlength.requiredLength}}，当前的长度为{{userName.errors?.minlength.actualLength}}
