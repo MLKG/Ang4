@@ -57,11 +57,14 @@ class GenericNumber<T> {
 @Component({
   selector: 'app-settings',
   template: `
+    <div class="display-box">
+      <div>666</div>
+    </div>
     <a routerLink="/settings/password">设置密码</a>
     <a routerLink="/settings/profile">个人信息</a>
     <router-outlet></router-outlet>
   `,
-  styles: []
+  styleUrls: [`./settings.component.less`]
 })
 
 export class SettingsComponent implements OnInit {

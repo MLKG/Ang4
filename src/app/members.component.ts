@@ -25,5 +25,8 @@ export class MembersComponent implements OnInit {
           this.members = data;
         }
     });
+    this.memberService.getProductList().subscribe(data => {
+      console.log(data);
+    });
   }
 }

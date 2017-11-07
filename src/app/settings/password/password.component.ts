@@ -6,8 +6,11 @@ import {Component, OnInit } from '@angular/core';
     <p>
       密码
     </p>
+    <div class="display-box">
+      <div>666</div>
+    </div>
   `,
-  styles: []
+  styleUrls: [`../settings.component.less`]
 })
 export class PasswordSettingsComponent implements OnInit {
   ngOnInit() {

@@ -5,7 +5,7 @@ import { Router } from "@angular/router";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.less']
 })
 export class AppComponent implements OnInit {
   title = 'app';
@@ -27,8 +27,8 @@ export class AppComponent implements OnInit {
   }
   ngOnInit() {
     console.log(this.router);
-    setTimeout(() => {
-      this.router.navigate(['/settings/password']);
-    }, 5000);
+    // setTimeout(() => {
+    //   this.router.navigate(['/settings/password']);
+    // }, 5000);
   }
 }
