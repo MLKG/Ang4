@@ -25,7 +25,7 @@ export class MembersComponent implements OnInit {
           this.members = data;
         }
     });
-    this.memberService.getProductList().subscribe(data => {
+    this.memberService.fetch().then(data => {
       console.log(data);
     });
   }
