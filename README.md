@@ -42,3 +42,25 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## 不需要AngularJS的知识
 ## 最好了解TypeScript语法
 
+# AngularJS的优点
+## 模板功能强大丰富（双向绑定）
+## 比较完善的前端MVC框架
+## 引入了Java的一些概念
+
+# AngularJS的一些问题
+## 性能
+## 路由ng-view 只能唯一不能嵌套
+## 作用域，无法使用原生的一些事件
+## 表单验证
+## JavaScript语言（ts是微软开发的语言）
+## 学习成本很高
+
+# Angular新特性
+## 全新的命令行工具AngularCLI
+## 服务器渲染
+## 移动和桌面兼容（Angular Material）
+
+# React侧重View的处理，很难开发大型的网站，需结合其他的框架
+# Vue 简单，灵活，性能，缺点：个人主导，团队上没有那么强；只关注web；服务器渲染
+# Angular继承了AngularJs的原有优点，吸收了React和其他一些前端框架的优点而做了大量的工作
+
