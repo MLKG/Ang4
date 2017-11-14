@@ -25,3 +25,15 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+# Angular学习要点
+## Angular框架搭建
+## 路由和导航
+## 依赖注入，编写可重用的组件
+## 绑定、响应式编程和管道
+## 组件间通讯，组件生命周期
+## 表单处理，高效实现校验
+## 与服务器通讯，WebSocket
+## 构建和部署，多坏境测试
+## 课程总结
+
