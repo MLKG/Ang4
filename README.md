@@ -26,6 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
+第一章：
 # Angular学习要点
 ## Angular简介及框架搭建
 ## 路由和导航
@@ -63,4 +64,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 # React侧重View的处理，很难开发大型的网站，需结合其他的框架
 # Vue 简单，灵活，性能，缺点：个人主导，团队上没有那么强；只关注web；服务器渲染
 # Angular继承了AngularJs的原有优点，吸收了React和其他一些前端框架的优点而做了大量的工作
+
+第二章：
+1.构建块、AngularCLI、组件Component
+2.搭建开发环境
+（1）安装NodeJS，AngularCli，WebStorm
+（2）使用AngularCli创建并允许Angular项目
+（3）分析Angular项目的目录结构及AngularCli生成的基础代码
 
