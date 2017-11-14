@@ -37,3 +37,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## 构建和部署，多坏境测试
 ## 课程总结
 
+# 前置知识
+## 前端的基础知识：html,css,js
+## 不需要AngularJS的知识
+## 最好了解TypeScript语法
+
