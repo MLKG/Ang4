@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+// 组件的必备元素：装饰器，模板，控制器
 // 组件元数据装饰器
 @Component({
   selector: 'app-root',  // css选择器
