@@ -4,13 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [
+  declarations: [  // 只能声明组件，指令，管道
     AppComponent
   ],
-  imports: [
+  imports: [   // 声明模块
     BrowserModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [],  // 声明服务
+  bootstrap: [AppComponent]   // 声明主组件
 })
 export class AppModule { }
