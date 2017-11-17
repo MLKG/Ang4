@@ -9,6 +9,7 @@ export class ProductComponent implements OnInit {
 
   private products: Array<Product>;
   private imgUrl = 'http://placehold.it/320x150';
+  // 构造函数
   constructor() { }
 
   ngOnInit() {
