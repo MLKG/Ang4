@@ -5,7 +5,7 @@ import {LoggerService} from './logger.service';
 export class ProductService {
   constructor(public logger: LoggerService) { }
   getProduct(): Product {
-    this.logger.log('getProduct方法被调用');
+    this.logger.log('产品1被调用！！');
     return new Product(0, 'iphone7', 6999, '苹果手机一部');
   }
 
