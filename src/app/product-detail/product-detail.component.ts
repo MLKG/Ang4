@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Params} from '@angular/router';
+import {Product, Comment, ProductService} from '../shared/product.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -9,11 +10,19 @@ import { ActivatedRoute } from '@angular/router';
 export class ProductDetailComponent implements OnInit {
 
   private imgUrl = 'http://placehold.it/820x230';
-  private productTitle: string;
-  constructor(private routerInfo: ActivatedRoute) { }
+  product: Product;
+  comments: Comment[];
+  constructor(private routerInfo: ActivatedRoute,
+              private productService: ProductService) { }
 
   ngOnInit() {
-    this.productTitle = this.routerInfo.snapshot.params['productTitle'];
+    // this.routerInfo.params.subscribe((params: Params) => {
+    //   const productId = params['productId'];
+    //   console.log(productId == 1);
+    //   this.product = this.productService.getProduct(productId);
+    // });
+    const productId: number = this.routerInfo.snapshot.params['productId'];
+    this.product = this.productService.getProduct(productId);
+    this.comments = this.productService.getCommentsForProductId(productId);
   }
-
 }

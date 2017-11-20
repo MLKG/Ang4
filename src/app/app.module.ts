@@ -13,10 +13,13 @@ import { ProductComponent } from './product/product.component';
 import { StarsComponent } from './stars/stars.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { HomeComponent } from './home/home.component';
+import { ProductService } from './shared/product.service';
 
 const routeConfig: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'product/:productTitle', component: ProductDetailComponent }
+  { path: 'product/:productId', component: ProductDetailComponent },
+  // 其他路径重定向到首页
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -41,7 +44,7 @@ const routeConfig: Routes = [
     RouterModule.forRoot(routeConfig)
   ],
   // 声明服务
-  providers: [],
+  providers: [ProductService],
   // 声明主组件
   bootstrap: [AppComponent]
 })
