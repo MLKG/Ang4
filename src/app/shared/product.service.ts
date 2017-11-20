@@ -20,16 +20,17 @@ export class ProductService {
     new Comment(6, 3, '2017-05-05 22:22:24', '张七', 2, '还不错吧，给个好评'),
     new Comment(7, 4, '2017-05-05 22:22:25', '张八', 2, '宝贝还行，一般般'),
     new Comment(8, 5, '2017-05-05 22:22:26', '张九', 2, '宝贝非常可以'),
+    new Comment(9, 3, '2017-05-05 22:22:26', '张十', 2, '宝贝可以')
   ];
   constructor() { }
   getProducts(): Product[] {
     return this.products;
   }
   getProduct(id: number): Product {
-    return this.products.find((product) => product.id == id);
+    return this.products.find((product) => product.id === id);
   }
   getCommentsForProductId(id: number): Comment[] {
-    return this.comments.filter((comment: Comment) => comment.productId == id);
+    return this.comments.filter((comment: Comment) => comment.productId === id);
   }
 }
 
