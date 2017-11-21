@@ -9,7 +9,25 @@ export class BindComponent implements OnInit {
 
   imgUrl = 'http://placehold.it/400x220';
   private isDisabled: boolean;
-  constructor() { }
+  size = 2;
+  someExpression = 'ccc';
+  isSpecial = true;
+  isC = true;
+  isD = true;
+  canSave = true;
+  greeting = 'A Value';
+  divStyle: any = {
+    color: 'red',
+    background: 'yellow'
+  };
+  constructor() {
+    setTimeout(() =>{
+      this.divStyle = {
+        color: 'yellow',
+        background: 'red'
+      };
+    }, 3000);
+  }
 
   ngOnInit() {
   }

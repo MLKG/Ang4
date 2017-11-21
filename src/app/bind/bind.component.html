@@ -6,5 +6,24 @@
 <img [src]="imgUrl" alt="">
 <img src="{{imgUrl}}" alt="">
 <br>
+<!--以下都是DOM属性绑定-->
 <input value="Tom" (input)="doOnInput($event)">
+<!--Dom属性绑定，表单的校验用这种-->
 <button [disabled]="isDisabled">点我</button>
+
+<!--以下都是html属性绑定-->
+<!--html属性绑定，绑定之后便存在disabled，此后会按钮会被一直禁用掉-->
+<button [attr.disabled]="isDisabled">点我</button>
+<table>
+  <tr>
+    <td [attr.colspan]="size">哒林</td>
+  </tr>
+</table>
+<div class="aaa bbb" [class]="someExpression">你好吗</div>
+<div class="aaa bbb" [class.ccc]="isSpecial">你好吗</div>
+<div class="aaa bbb" [ngClass]="{'ccc': isC, 'ddd': isD}">你好吗</div>
+<button class="aaa" [style.color]="isSpecial? 'green': 'red'">按钮</button>
+<button class="aaa" [style.font-size.px]="isSpecial? 26: 12">按钮</button>
+<div class="aaa bbb" [ngStyle]="{'font-style': canSave ? 'italic': 'normal'}">样式绑定</div>
+<input type="text" [attr.value]="greeting">
+<div [ngStyle]="divStyle">样式绑定</div>
