@@ -28,7 +28,6 @@ export class BindComponent implements OnInit {
       };
     }, 3000);
   }
-
   ngOnInit() {
   }
   doOnClick(event: any) {
