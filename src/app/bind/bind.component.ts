@@ -16,16 +16,21 @@ export class BindComponent implements OnInit {
   isD = true;
   canSave = true;
   greeting = 'A Value';
+  name: string;
+  bind: string;
   divStyle: any = {
     color: 'red',
     background: 'yellow'
   };
   constructor() {
-    setTimeout(() =>{
+    setTimeout(() => {
       this.divStyle = {
         color: 'yellow',
         background: 'red'
       };
+    }, 3000);
+    setInterval(() => {
+      this.name = 'Tom';
     }, 3000);
   }
   ngOnInit() {
@@ -35,7 +40,8 @@ export class BindComponent implements OnInit {
     this.isDisabled = !this.isDisabled;
   }
   doOnInput(event: any) {
-    console.log(event.target.value);  // 获取的是Dom属性是变化的，代表的是当前的值，可以改变
-    console.log(event.target.getAttribute('value'));  // 获取的是html属性，是初始值固定的不变的，不能改变，作用是初始化Dom属性的值
+    // console.log(event.target.value);  // 获取的是Dom属性是变化的，代表的是当前的值，可以改变
+    // console.log(event.target.getAttribute('value'));  // 获取的是html属性，是初始值固定的不变的，不能改变，作用是初始化Dom属性的值
+    this.name = event.target.value;
   }
 }

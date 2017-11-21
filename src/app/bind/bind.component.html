@@ -1,18 +1,24 @@
 <p>
   bind works!
 </p>
-<button (click)="doOnClick($event)">点我</button><br>
-<!--两种效果等价的-->
+<!--<input [value]="name" (input)="doOnInput($event)">-->
+<input type="text" [(ngModel)]="name">
+{{name}}
+<br>
+<input type="text" [(ngModel)]="bind">
+{{bind}}
+<!--<button (click)="doOnClick($event)">点我</button><br>
+&lt;!&ndash;两种效果等价的&ndash;&gt;
 <img [src]="imgUrl" alt="">
 <img src="{{imgUrl}}" alt="">
 <br>
-<!--以下都是DOM属性绑定-->
+&lt;!&ndash;以下都是DOM属性绑定&ndash;&gt;
 <input value="Tom" (input)="doOnInput($event)">
-<!--Dom属性绑定，表单的校验用这种-->
+&lt;!&ndash;Dom属性绑定，表单的校验用这种&ndash;&gt;
 <button [disabled]="isDisabled">点我</button>
 
-<!--以下都是html属性绑定-->
-<!--html属性绑定，绑定之后便存在disabled，此后会按钮会被一直禁用掉-->
+&lt;!&ndash;以下都是html属性绑定&ndash;&gt;
+&lt;!&ndash;html属性绑定，绑定之后便存在disabled，此后会按钮会被一直禁用掉&ndash;&gt;
 <button [attr.disabled]="isDisabled">点我</button>
 <table>
   <tr>
@@ -26,5 +32,5 @@
 <button class="aaa" [style.font-size.px]="isSpecial? 26: 12">按钮</button>
 <div class="aaa bbb" [ngStyle]="{'font-style': canSave ? 'italic': 'normal'}">样式绑定</div>
 <input type="text" [attr.value]="greeting">
-<div [ngStyle]="divStyle">样式绑定</div>
+<div [ngStyle]="divStyle">样式绑定</div>-->
 
