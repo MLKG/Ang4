@@ -8,12 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class BindComponent implements OnInit {
 
   imgUrl = 'http://placehold.it/400x220';
+  private isDisabled: boolean;
   constructor() { }
 
   ngOnInit() {
   }
   doOnClick(event: any) {
     console.log(event);
+    this.isDisabled = !this.isDisabled;
   }
   doOnInput(event: any) {
     console.log(event.target.value);  // 获取的是Dom属性是变化的，代表的是当前的值，可以改变

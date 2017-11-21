@@ -1,9 +1,10 @@
 <p>
   bind works!
 </p>
-<button (click)="doOnClick($event)">点我</button>
+<button (click)="doOnClick($event)">点我</button><br>
 <!--两种效果等价的-->
 <img [src]="imgUrl" alt="">
 <img src="{{imgUrl}}" alt="">
+<br>
 <input value="Tom" (input)="doOnInput($event)">
-<button [disabled]="true">点我</button>
+<button [disabled]="isDisabled">点我</button>
