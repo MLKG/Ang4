@@ -1,24 +1,27 @@
-<p>
+<!--<p>
   bind works!
 </p>
-<!--<input [value]="name" (input)="doOnInput($event)">-->
+&lt;!&ndash;<input [value]="name" (input)="doOnInput($event)">&ndash;&gt;
 <input type="text" [(ngModel)]="name">
 {{name}}
 <br>
+<br>
 <input type="text" [(ngModel)]="bind">
 {{bind}}
-<!--<button (click)="doOnClick($event)">点我</button><br>
-&lt;!&ndash;两种效果等价的&ndash;&gt;
+<br>
+<br>
+<button (click)="doOnClick($event)">点我</button><br>
+两种效果等价的
 <img [src]="imgUrl" alt="">
 <img src="{{imgUrl}}" alt="">
 <br>
-&lt;!&ndash;以下都是DOM属性绑定&ndash;&gt;
+以下都是DOM属性绑定
 <input value="Tom" (input)="doOnInput($event)">
-&lt;!&ndash;Dom属性绑定，表单的校验用这种&ndash;&gt;
+Dom属性绑定，表单的校验用这种
 <button [disabled]="isDisabled">点我</button>
 
-&lt;!&ndash;以下都是html属性绑定&ndash;&gt;
-&lt;!&ndash;html属性绑定，绑定之后便存在disabled，此后会按钮会被一直禁用掉&ndash;&gt;
+以下都是html属性绑定
+html属性绑定，绑定之后便存在disabled，此后会按钮会被一直禁用掉
 <button [attr.disabled]="isDisabled">点我</button>
 <table>
   <tr>
