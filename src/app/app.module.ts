@@ -6,12 +6,14 @@ import { HttpModule} from '@angular/http';
 import { AppComponent } from './app.component';
 import { BindComponent } from './bind/bind.component';
 import { ResponseComponent } from './response/response.component';
+import { MultiplePipe } from './pipe/multiple.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     BindComponent,
-    ResponseComponent
+    ResponseComponent,
+    MultiplePipe
   ],
   imports: [
     BrowserModule,

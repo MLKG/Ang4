@@ -11,9 +11,16 @@ import 'rxjs/add/observable/interval';
 })
 export class ResponseComponent implements OnDestroy {
   clock: number;
+  birthday: Date = new Date();
+  pi = 1314.0255666;
+  b = 20.6745;
+  size = 66;
   subscription: Subscription;
   constructor() {
-    Observable.interval(1000).subscribe(value => this.clock = value);
+    Observable.interval(1000).subscribe(value => {
+      this.clock = value;
+      this.birthday = new Date();
+    });
   }
   ngOnDestroy() {
     if (this.subscription !== undefined) {

@@ -1,3 +1,13 @@
 <p>
   {{clock}}
 </p>
+<p>管道练习</p>
+<div>我的生日是{{birthday | date:'yyyy-MM-dd HH:mm:ss'}}</div>
+<div>圆周率是{{pi | number:'.1-2'}}</div>
+<!--小数点后面的A-B代表的意思是至少保留A位小数，最多保留B位小数，值是四舍五入的,
+    其中最少整数位数默认为1,最少小数位数默认为0,最多小数位数默认为3,当小数位数少于规定的{最少小数位数}时，会自动补0
+    当小数位数多于规定的{最多小数位数}时，会四舍五入-->
+<div>圆周率是{{pi | currency:'CNY':false:'4.1-5'}}</div>
+<div>我的金额是{{pi | currency:'USD':false:'.1-5'}}</div>
+<div>B变量：{{ b | currency: 'CNY': true: '3.1-3'}}</div>
+<div>自定义管道{{ size | multiple:6:7:8}}</div>
