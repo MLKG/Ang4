@@ -10,7 +10,7 @@ export class AppComponent {
   // title = 'app';
   // stock = '';
   newPriceQuote: PriceQuote = new PriceQuote('', 0);
-  priceQuoteHandler (event: any) {
+  buyHandler (event: any) {
     this.newPriceQuote = event;
   }
 }
