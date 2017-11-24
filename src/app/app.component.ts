@@ -7,8 +7,8 @@ import { PriceQuote } from './price-quote/price-quote.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  // title = 'app';
-  // stock = '';
+  title = 'app';
+  stock = 'IBM';
   newPriceQuote: PriceQuote = new PriceQuote('', 0);
   buyHandler (event: any) {
     this.newPriceQuote = event;
