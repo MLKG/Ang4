@@ -30,6 +30,7 @@ export class LifeComponent implements
   // 输入属性titleName
   @Input()
   titleName: string;
+  message = '消息';
   // 定义一个打印日志的方法
   logIt (msg: string) {
     console.log(`#${logIndex++} ${msg}`);  // #1 ngDoCheck
