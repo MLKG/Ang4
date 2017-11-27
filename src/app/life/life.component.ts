@@ -37,7 +37,6 @@ export class LifeComponent implements
   }
   // 构造函数
   constructor() {
-    console.log(this.titleName);
     this.logIt('name属性在constructor里的值是：' + this.titleName);
   }
   ngOnChanges(changes: SimpleChanges): void {

@@ -16,13 +16,16 @@ export class ChildComponent implements OnInit, OnChanges, DoCheck {
   oldUserName: string;
   changeDetected = false;
   noChangeCount = 0;
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
+    console.log(666);
   }
+
   ngOnChanges(changes: SimpleChanges): void {
     console.log(changes);
     console.log(JSON.stringify(changes, null, 2));
+  }
+  ngOnInit() {
+    console.log(777);
   }
   ngDoCheck(): void {
     if (this.user.name !== this.oldUserName) {
