@@ -9,9 +9,10 @@ export class StarsComponent implements OnInit, OnChanges {
   @Input()
   private rating = 0;
   @Output()
-  private ratingChange: EventEmitter<number> = new EventEmitter();
-  // 输出属性是输入属性的名字 + ‘Change’的时候，在父组件可用自己用[(rating)]去进行双向绑定
-  private stars: boolean[];
+  private ratingNewValue: EventEmitter<number> = new EventEmitter();
+  // private ratingChange: EventEmitter<number> = new EventEmitter();
+  // 输出属性是输入属性的名字 + ‘Change’的时候，在父组件可以直接用[(rating)]去进行双向绑定
+  public stars: boolean[];
   @Input()
   private readonly = true;
   constructor() { }
@@ -25,7 +26,8 @@ export class StarsComponent implements OnInit, OnChanges {
   clickStar(index: number) {
     if (!this.readonly) {
       this.rating = index + 1;
-      this.ratingChange.emit(this.rating);
+      // this.ratingChange.emit(this.rating);
+      this.ratingNewValue.emit(this.rating);
     }
   }
 

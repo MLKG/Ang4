@@ -17,6 +17,7 @@ export class ProductDetailComponent implements OnInit {
   newRating = 5;
   newComment = '';
   isCommentHidden = true;
+  commentButton = '发表评论';
   constructor(private routerInfo: ActivatedRoute,
               private productService: ProductService,
               private datePipe: DatePipe) { }
@@ -46,5 +47,17 @@ export class ProductDetailComponent implements OnInit {
     this.newComment = '';
     this.newRating = 5;
     this.isCommentHidden = true;
+    this.commentButton = '发表评论';
+  }
+  ratingNewValueClick(event: number) {
+    this.newRating = event;
+  }
+  commentClick() {
+    this.isCommentHidden = !this.isCommentHidden;
+    if (this.isCommentHidden) {
+      this.commentButton = '发表评论';
+    } else {
+      this.commentButton = '取消评论';
+    }
   }
 }
