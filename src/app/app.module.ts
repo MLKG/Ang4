@@ -9,6 +9,14 @@ import { LifeComponent } from './life/life.component';
 import { ChildComponent } from './child/child.component';
 import { ChildrenComponent } from './children/children.component';
 import { ContentComponent } from './content/content.component';
+import { AfterContentComponent } from './after-content/after-content.component';
+import { Child2Component } from './child2/child2.component';
+import {RouterModule, Routes} from '@angular/router';
+
+const routeConfig: Routes = [
+  {path: 'child1', component: ChildComponent},
+  {path: 'child2', component: Child2Component}
+];
 
 @NgModule({
   declarations: [
@@ -18,12 +26,15 @@ import { ContentComponent } from './content/content.component';
     LifeComponent,
     ChildComponent,
     ChildrenComponent,
-    ContentComponent
+    ContentComponent,
+    AfterContentComponent,
+    Child2Component
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(routeConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

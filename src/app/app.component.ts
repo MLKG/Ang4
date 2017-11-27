@@ -1,4 +1,7 @@
-import {AfterContentInit, AfterViewChecked, AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {
+  AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, OnDestroy, OnInit,
+  ViewChild
+} from '@angular/core';
 import { PriceQuote } from './price-quote/price-quote.component';
 import {ChildrenComponent} from './children/children.component';
 
@@ -7,7 +10,7 @@ import {ChildrenComponent} from './children/children.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, AfterViewInit, AfterViewChecked {
+export class AppComponent implements OnInit, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
   title = 'app';
   stock = 'IBM';
   greeting = 'Hello';
@@ -24,10 +27,20 @@ export class AppComponent implements OnInit, AfterViewInit, AfterViewChecked {
   ngOnInit(): void {
     this.message = '你好';
   }
+  ngAfterContentInit(): void {
+    this.message = 'hello world';
+    console.log('父组件投影内容初始化完毕');
+  }
+  ngAfterContentChecked(): void {
+    console.log('父组件投影内容变更检测完毕');
+  }
   ngAfterViewInit(): void {
     console.log('父组件的视图初始化完毕');
   }
   ngAfterViewChecked(): void {
     console.log('父组件的视图变更检测完毕');
+  }
+  ngOnDestroy(): void {
+    console.log('child1组件被销毁');
   }
 }

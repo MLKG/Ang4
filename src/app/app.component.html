@@ -28,15 +28,23 @@
 <app-children #children2></app-children>
 <button (click)="children2.greeting('Dalin')">调用</button>
 {{message}}-->
-<div class="wrapper">
-  <h2>我是父组件</h2>
-  <div>这个div定义在父组件中</div>
-  <app-content>
-    <div class="header">这是页头，这个div是父组件投影到子组件的, {{title}}</div>
-    <div class="footer">这是页脚，这个div是父组件投影到子组件的,{{title}}</div>
-  </app-content>
-</div>
-<div [innerHtml]="divContent"></div>
+
+<!--<div class="wrapper">-->
+  <!--<h2>我是父组件</h2>-->
+  <!--<div>这个div定义在父组件中</div>-->
+  <!--<app-content>-->
+    <!--<div class="header">这是页头，这个div是父组件投影到子组件的, {{title}}</div>-->
+    <!--<div class="footer">这是页脚，这个div是父组件投影到子组件的,{{title}}</div>-->
+  <!--</app-content>-->
+<!--</div>-->
+<!--<div [innerHtml]="divContent"></div>-->
+
+<!--<app-after-content></app-after-content>-->
+<!--{{message}}-->
+
+<a [routerLink]="['/child1']">child1</a>
+<a [routerLink]="['/child2']">child2</a>
+<router-outlet></router-outlet>
 
 
 
