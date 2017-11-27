@@ -8,6 +8,7 @@ import { PriceQuoteComponent } from './price-quote/price-quote.component';
 import { LifeComponent } from './life/life.component';
 import { ChildComponent } from './child/child.component';
 import { ChildrenComponent } from './children/children.component';
+import { ContentComponent } from './content/content.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ChildrenComponent } from './children/children.component';
     PriceQuoteComponent,
     LifeComponent,
     ChildComponent,
-    ChildrenComponent
+    ChildrenComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,

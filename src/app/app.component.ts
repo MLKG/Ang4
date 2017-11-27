@@ -16,6 +16,7 @@ export class AppComponent implements OnInit, AfterViewInit, AfterViewChecked {
   @ViewChild('children1')
   children1: ChildrenComponent;
   message: string;
+  divContent = '<div>666</div>';
 
   buyHandler (event: any) {
     this.newPriceQuote = event;
