@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {equalValidator, mobileAsyncValidator, mobileValidator} from '../validator/validators';
 
 @Component({
   selector: 'app-reactive-regist',
@@ -8,35 +9,40 @@ import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '
 })
 export class ReactiveRegistComponent implements OnInit {
   formModel: FormGroup;
-  mobileValidator(control: FormControl): any {
-    const phoneReg = /^1[3-9]\d{9}$/;
-    const vaild = phoneReg.test(control.value);
-    console.log('mobile的校验结果是' + vaild);
-    return vaild ? null : { mobile: true };
-  }
-  equalValidator(group: FormGroup): any {
-    const password: FormControl = group.get('password') as FormControl;
-    const pconfirm: FormControl = group.get('pconfirm') as FormControl;
-    const valid: boolean = (password.value === pconfirm.value);
-    console.log('交易密码的校验结果是' + valid);
-    return valid ? null : { equal: true };
-  }
   constructor(fb: FormBuilder) {
     this.formModel = fb.group({
       username: ['', [Validators.required, Validators.minLength(6)]],
-      mobile: ['', this.mobileValidator],
+      mobile: ['', mobileValidator, mobileAsyncValidator],
       passwordsGroup: fb.group({
-        password: [''],
+        password: ['', Validators.minLength(6)],
         pconfirm: ['']
-      }, {validator: this.equalValidator})
+      }, {validator: equalValidator})
     });
   }
   onSubmit() {
-    const isValid: boolean = this.formModel.get('username').valid;
-    console.log('username的校验结果' + isValid);
-    const errors: any = this.formModel.get('username').errors;
-    console.log('username的错误信息是' + JSON.stringify(errors));
-    console.log(this.formModel.value);
+    // username
+    // const userNameValid: boolean = this.formModel.get('username').valid;
+    // console.log('username的校验结果' + userNameValid);
+    // const userNameErrors: any = this.formModel.get('username').errors;
+    // console.log('username的错误信息是' + JSON.stringify(userNameErrors));
+    // mobile
+    // const mobileValid: boolean = this.formModel.get('mobile').valid;
+    // console.log('mobile的校验结果' + mobileValid);
+    // const mobileErrors: any = this.formModel.get('mobile').errors;
+    // console.log('mobile的错误信息是' + JSON.stringify(mobileErrors));
+    // passwordsGroup
+    // const passwordsGroupValid: boolean = this.formModel.get('passwordsGroup').valid;
+    // console.log('passwordsGroup的校验结果' + passwordsGroupValid);
+    // const passwordsGroupErrors: any = this.formModel.get('passwordsGroup').errors;
+    // console.log('passwordsGroup的错误信息是' + JSON.stringify(passwordsGroupErrors));
+    // form
+    console.log(this.formModel.get('username').invalid);
+    if (this.formModel.get('passwordsGroup').invalid) {
+      console.log(this.formModel.get('passwordsGroup').errors.equal.desc);
+    }
+    if (this.formModel.valid) {
+      console.log(this.formModel.value);
+    }
   }
   ngOnInit() {
   }
