@@ -14,7 +14,7 @@
       请输入了正确的手机号
     </div>
   </div>
-  <div [hidden]="!formModel.get('mobile').pending">
+  <div [hidden]="!formModel.get('mobile').pending" style="color: red;">
     正在校验手机号码的合法性
   </div>
   <div formGroupName="passwordsGroup">
