@@ -5,11 +5,11 @@ export class ProductService {
 
   private products: Product[] = [
     new Product(1, '第一个商品1', 1.99, 4, '这是第一个商品的描述', ['电子产品', '硬件设备']),
-    new Product(2, '第二个商品1', 2.99, 5, '这是第二个商品的描述', ['硬件设备']),
-    new Product(3, '第三个商品2', 3.99, 2, '这是第三个商品的描述', ['电子产品']),
+    new Product(2, '第二个商品1', 2.99, 5, '这是第二个商品的描述', ['图书']),
+    new Product(3, '第三个商品2', 3.99, 2, '这是第三个商品的描述', ['硬件设备']),
     new Product(4, '第四个商品3', 4.99, 1, '这是第四个商品的描述', ['电子产品', '硬件设备']),
-    new Product(5, '第五个商品3', 5.99, 3, '这是第五个商品的描述', ['图书产品']),
-    new Product(6, '第六个商品3', 6.99, 5, '这是第六个商品的描述', ['电子产品', '高级设备'])
+    new Product(5, '第五个商品3', 5.99, 3, '这是第五个商品的描述', ['电子产品']),
+    new Product(6, '第六个商品3', 6.99, 5, '这是第六个商品的描述', ['图书', '硬件设备'])
   ];
   private comments: Comment[] = [
     new Comment(1, 1, '2017-02-02 22:22:22', '张三', 3, '东西不错'),
@@ -31,6 +31,9 @@ export class ProductService {
   }
   getCommentsForProductId(id: number): Comment[] {
     return this.comments.filter((comment: Comment) => comment.productId === id);
+  }
+  getAllCategories(): string[] {
+    return ['电子产品', '硬件设备', '图书'];
   }
 }
 
