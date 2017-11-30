@@ -10,18 +10,18 @@ import 'rxjs/add/operator/map';
 })
 export class ProductComponent implements OnInit {
 
-  // dataSource: Observable<any>;
-  products: Observable<any>;
-  // products: Array<any> = [];
+  dataSource: Observable<any>;
+  products: Array<any> = [];
   constructor(private http: Http) {
-    // this.dataSource = this.http.get('/api/products').map((res) => res.json());
     const myHeaders: Headers = new Headers();
-    myHeaders.append('Authorization', 'Basic 123456');
-    this.products = this.http.get('/api/products', {headers: myHeaders}).map((res) => res.json());
+    myHeaders.append('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+    this.dataSource = this.http.get('/api/products', {headers: myHeaders}).map((res) => res.json());
   }
 
   ngOnInit() {
-    // this.dataSource.subscribe((data) => this.products = data);
+    this.dataSource.subscribe((data) => {
+      this.products = data;
+    });
   }
 
 }
