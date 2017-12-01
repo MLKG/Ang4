@@ -31,11 +31,11 @@ export class SearchComponent implements OnInit {
     }
   }
   ngOnInit() {
-    this.categories = this.productService.getAllCategories();
+    this.categories = ProductService.getAllCategories();
   }
   onSearch() {
     if (this.formModle.valid) {
-      console.log(this.formModle.value);
+      this.productService.searchEvent.emit(this.formModle.value);
     }
   }
 }

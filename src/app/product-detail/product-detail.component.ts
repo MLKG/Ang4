@@ -29,8 +29,10 @@ export class ProductDetailComponent implements OnInit {
     //   this.product = this.productService.getProduct(productId);
     // });
     const productId = Number(this.routerInfo.snapshot.params['productId']);
-    this.product = this.productService.getProduct(productId);
-    this.comments = this.productService.getCommentsForProductId(productId);
+    this.productService.getProduct(productId).subscribe(product => this.product = product);
+    this.productService.getCommentsForProductId(productId).subscribe((comments) => {
+      this.comments = comments;
+    });
   }
   addComment() {
     const comment = new Comment(
