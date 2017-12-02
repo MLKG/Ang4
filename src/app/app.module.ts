@@ -15,6 +15,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { HomeComponent } from './home/home.component';
 import { ProductService } from './shared/product.service';
 import { FilterPipe } from './pipe/filter.pipe';
+import { WebSocketService } from './shared/web-socket.service';
 
 const routeConfig: Routes = [
   { path: '', component: HomeComponent },
@@ -47,7 +48,7 @@ const routeConfig: Routes = [
     RouterModule.forRoot(routeConfig)
   ],
   // 声明服务
-  providers: [ProductService],
+  providers: [ProductService, WebSocketService],
   // 声明主组件
   bootstrap: [AppComponent]
 })
