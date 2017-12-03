@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -16,7 +17,6 @@ import { HomeComponent } from './home/home.component';
 import { ProductService } from './shared/product.service';
 import { FilterPipe } from './pipe/filter.pipe';
 import { WebSocketService } from './shared/web-socket.service';
-import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 
 const routeConfig: Routes = [
   { path: '', component: HomeComponent },
@@ -49,9 +49,7 @@ const routeConfig: Routes = [
     RouterModule.forRoot(routeConfig)
   ],
   // 声明服务
-  providers: [ProductService, WebSocketService, {
-    provide: LocationStrategy, useClass: HashLocationStrategy
-  }],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, ProductService, WebSocketService],
   // 声明主组件
   bootstrap: [AppComponent]
 })
