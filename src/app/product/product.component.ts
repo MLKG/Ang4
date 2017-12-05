@@ -11,10 +11,10 @@ import {Observable} from 'rxjs/Observable';
 })
 export class ProductComponent implements OnInit {
 
-  private products: Observable<Product[]>;
+  products: Observable<Product[]>;
   // private keyword: string;
   // private titleFilter: FormControl = new FormControl();
-  private imgUrl = 'http://placehold.it/320x150';
+  imgUrl = 'http://placehold.it/320x150';
   // 构造函数
   constructor(private productService: ProductService) {
     // this.titleFilter.valueChanges.debounceTime(500).subscribe((value) => {

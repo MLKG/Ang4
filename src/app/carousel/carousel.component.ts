@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarouselComponent implements OnInit {
 
-  private imgUrl = 'http://placehold.it/800x300';
+  imgUrl = 'http://placehold.it/800x300';
   constructor() { }
 
   ngOnInit() {

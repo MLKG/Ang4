@@ -7,7 +7,7 @@ import {Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges
 })
 export class StarsComponent implements OnInit, OnChanges {
   @Input()
-  private rating = 0;
+  rating = 0;
   @Output()
   private ratingNewValue: EventEmitter<number> = new EventEmitter();
   // private ratingChange: EventEmitter<number> = new EventEmitter();

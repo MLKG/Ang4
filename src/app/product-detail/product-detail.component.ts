@@ -13,7 +13,7 @@ import {Subscription} from 'rxjs/Subscription';
 })
 export class ProductDetailComponent implements OnInit {
 
-  private imgUrl = 'http://placehold.it/820x230';
+  imgUrl = 'http://placehold.it/820x230';
   product: Product;
   comments: Comment[];
   newRating = 5;
